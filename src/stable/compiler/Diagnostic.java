@@ -1,6 +1,7 @@
 package stable.compiler;
 
 public final class Diagnostic extends RuntimeException {
+    // Ошибка исходной программы с категорией и точной позицией.
     final String category;
     final Pos pos;
 
@@ -24,6 +25,7 @@ public final class Diagnostic extends RuntimeException {
 
     @Override
     public String toString() {
+        // Единый формат для CLI и тестов: категория, строка, столбец, причина.
         return category + " error at " + line() + ":" + column() + ": " + getMessage();
     }
 }
