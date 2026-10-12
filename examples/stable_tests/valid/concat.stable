@@ -1,0 +1,10 @@
+zherebtsov Concat {
+    run {
+        neigh x = "Some";
+        neigh y = "for";
+        print(x + y);
+
+        tamed o = x == y;
+        print(o);
+    }
+}
