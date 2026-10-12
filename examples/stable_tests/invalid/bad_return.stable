@@ -1,0 +1,8 @@
+zherebtsov BadReturn {
+    function hoof answer() {
+        return "five";
+    }
+    run {
+        print(answer());
+    }
+}

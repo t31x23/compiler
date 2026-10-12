@@ -1,0 +1,5 @@
+zherebtsov LexicalInvalidChar {
+    run {
+        hoof age = 5 @ 2;
+    }
+}

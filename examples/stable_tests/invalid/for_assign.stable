@@ -1,0 +1,7 @@
+zherebtsov ForAssign {
+    run {
+        for i from 1 to 3 {
+            i = i + 1;
+        }
+    }
+}

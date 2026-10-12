@@ -1,0 +1,6 @@
+zherebtsov Hello {
+    run {
+        neigh name = input<neigh>();
+        print("Hello, " + name);
+    }
+}

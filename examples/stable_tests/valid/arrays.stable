@@ -1,0 +1,18 @@
+zherebtsov Arrays {
+    function hoof change(herd<hoof> data) {
+        data[0] = 99;
+        return data[0];
+    }
+    run {
+        herd<hoof> nums = [2, 4, 6];
+        herd<hoof> alias = nums;
+        alias[1] = 40;
+        print(nums[1]);
+        print(change(nums));
+        print(alias[0]);
+        herd<neigh> names = ["Storm", "Flash"];
+        print(names[1]);
+        herd<tamed> flags = [tame, wild];
+        print(flags[0]);
+    }
+}

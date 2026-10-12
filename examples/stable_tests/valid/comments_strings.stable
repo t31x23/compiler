@@ -1,0 +1,10 @@
+zherebtsov CommentsStrings {
+    run {
+        // this line must be ignored
+        neigh url = "a//b";
+        print(url);
+        print("ABC 123!?/+");
+        hoof x = 2; // trailing comment
+        print(x);
+    }
+}

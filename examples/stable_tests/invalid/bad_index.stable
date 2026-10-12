@@ -1,0 +1,6 @@
+zherebtsov BadIndex {
+    run {
+        herd<hoof> arr = [1, 2];
+        print(arr[1.0]);
+    }
+}

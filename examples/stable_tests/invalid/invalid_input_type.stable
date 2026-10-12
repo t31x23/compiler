@@ -1,0 +1,5 @@
+zherebtsov InvalidInputType {
+    run {
+        herd<hoof> ages = input<herd<hoof>>();
+    }
+}

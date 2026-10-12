@@ -1,0 +1,6 @@
+zherebtsov SyntaxMissingSemicolon {
+    run {
+        hoof age = 5
+        print(age);
+    }
+}

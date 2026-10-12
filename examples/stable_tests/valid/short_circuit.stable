@@ -1,0 +1,10 @@
+zherebtsov ShortCircuit {
+    run {
+        tamed a = wild && (input<tamed>());
+        tamed b = tame || (input<tamed>());
+        print(a);
+        print(b);
+        tamed c = tame && (input<tamed>());
+        print(c);
+    }
+}

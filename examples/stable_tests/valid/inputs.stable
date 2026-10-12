@@ -1,0 +1,12 @@
+zherebtsov InputAll {
+    run {
+        neigh name = input<neigh>();
+        hoof age = input<hoof>();
+        stride speed = input<stride>();
+        tamed trained = input<tamed>();
+        print("Horse: " + name);
+        print(age + 1);
+        print(speed * 2.0);
+        print(trained);
+    }
+}

@@ -1,0 +1,5 @@
+zherebtsov StringMultiply {
+    run {
+        neigh result = "a" * "b";
+    }
+}

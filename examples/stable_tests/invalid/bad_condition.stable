@@ -1,0 +1,7 @@
+zherebtsov BadCondition {
+    run {
+        if (5) {
+            print("wrong");
+        }
+    }
+}

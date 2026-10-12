@@ -1,0 +1,10 @@
+22
+12
+85
+3
+2
+-5
+11.0
+Stable Language
+tame
+wild

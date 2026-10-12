@@ -1,0 +1,5 @@
+zherebtsov UnknownVariable {
+    run {
+        print(unknown);
+    }
+}

@@ -1,0 +1,5 @@
+zherebtsov TypeMismatch {
+    run {
+        hoof age = "Storm";
+    }
+}

@@ -1,0 +1,8 @@
+zherebtsov FunctionArgs {
+    function hoof sum(hoof a, hoof b) {
+        return a + b;
+    }
+    run {
+        print(sum(5));
+    }
+}

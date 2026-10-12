@@ -1,0 +1,22 @@
+zherebtsov Loops {
+    run {
+        hoof total = 0;
+        for i from 1 to 4 {
+            total = total + i;
+        }
+        print(total);
+        for j from 5 to 3 {
+            print("never");
+        }
+        hoof counter = 3;
+        while (counter > 0) {
+            print(counter);
+            counter = counter - 1;
+        }
+        for outer from 1 to 2 {
+            for inner from 1 to 2 {
+                print(outer * inner);
+            }
+        }
+    }
+}

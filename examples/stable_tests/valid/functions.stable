@@ -1,0 +1,26 @@
+zherebtsov Functions {
+    function hoof factorial(hoof n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+    function stride multiply(stride a, stride b) {
+        return a * b;
+    }
+    function neigh greet(neigh name) {
+        return "Hello, " + name;
+    }
+    function tamed check(hoof value) {
+        return value == 120;
+    }
+    run {
+        hoof value = factorial(5);
+        print(value);
+        print(multiply(2.5, 4.0));
+        print(greet("Storm"));
+        print(check(value));
+        greet("Unused result");
+    }
+}

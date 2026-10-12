@@ -1,0 +1,26 @@
+zherebtsov Conditions {
+    run {
+        hoof age = 5;
+        stride weight = 12.5;
+        neigh name = "Storm";
+        tamed ready = (age >= 3 && weight > 10.0) || wild;
+        if (ready && name == "Storm") {
+            print("accepted");
+        } else {
+            print("rejected");
+        }
+        if (!wild) {
+            print("not wild");
+        }
+        if (age != 5) {
+            print("wrong age");
+        } else {
+            print("correct age");
+        }
+        print(age < 6);
+        print(age <= 5);
+        print(weight >= 12.5);
+        print(name != "Flash");
+        print(tame == tame);
+    }
+}

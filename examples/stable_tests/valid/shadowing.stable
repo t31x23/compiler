@@ -1,0 +1,10 @@
+zherebtsov Shadowing {
+    run {
+        hoof value = 5;
+        if (tame) {
+            hoof value = 10;
+            print(value);
+        }
+        print(value);
+    }
+}

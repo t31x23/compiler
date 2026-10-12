@@ -1,0 +1,28 @@
+zherebtsov Basics {
+    run {
+        hoof a = 17;
+        hoof b = 5;
+        hoof sum = a + b;
+        hoof difference = a - b;
+        hoof product = a * b;
+        hoof quotient = a / b;
+        hoof remainder = a % b;
+        hoof negative = -b;
+        print(sum);
+        print(difference);
+        print(product);
+        print(quotient);
+        print(remainder);
+        print(negative);
+        stride speed = 2.5;
+        stride time = 4.0;
+        stride distance = speed * time + 1.0;
+        print(distance);
+        neigh first = "Stable";
+        neigh full = first + " Language";
+        print(full);
+        tamed active = tame;
+        print(active);
+        print(wild);
+    }
+}
