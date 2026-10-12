@@ -20,6 +20,9 @@ final class Lexer {
     private int offset;
     private int line = 1;
     private int column = 1;
+    private final Set<String> OPERATORS = Set.of(Constants.OP_LE, Constants.OP_GE, Constants.OP_EQ, Constants.OP_NE,
+    Constants.OP_AND, Constants.OP_OR);
+    private final String MONO_OPERATORS = "!;,+-*/=%()[]{}<>";
 
     Lexer(String source) {
         this.source = source;
@@ -80,15 +83,14 @@ final class Lexer {
             }
             // Сначала проверяем двухсимвольные операторы, чтобы <= не разбилось на < и =.
             String pair = Constants.EMPTY + ch + peekNext();
-            if (Set.of(Constants.OP_LE, Constants.OP_GE, Constants.OP_EQ, Constants.OP_NE,
-                    Constants.OP_AND, Constants.OP_OR).contains(pair)) {
+            if (OPERATORS.contains(pair)) {
                 advance();
                 advance();
                 tokens.add(new Token(pair, pair, pos));
                 continue;
             }
             // Остальные допустимые знаки — одиночные токены.
-            if ("!;,+-*/=%()[]{}<>".indexOf(ch) >= 0) {
+            if (MONO_OPERATORS.indexOf(ch) >= 0) {
                 advance();
                 tokens.add(new Token(String.valueOf(ch), String.valueOf(ch), pos));
                 continue;

@@ -38,8 +38,21 @@ Write-Host '[2/4] Translating Stable to Java...'
 # CLI печатает путь результата; из него берём точное имя Java-класса.
 $javaFile = (& java -cp $compilerOut stable.compiler.Main $sourceFile | Select-Object -Last 1)
 Check-Exit 'Translation'
-if (-not (Test-Path -LiteralPath $javaFile -PathType Leaf)) { throw "Java file not generated: $javaFile" }
+
+if (-not (Test-Path -LiteralPath $javaFile -PathType Leaf)) {
+    throw "Java file not generated: $javaFile"
+}
+
 $className = [IO.Path]::GetFileNameWithoutExtension($javaFile)
+
+$generatedDir = Join-Path $root 'out/generated-sources'
+New-Item -ItemType Directory -Force -Path $generatedDir | Out-Null
+
+$destination = Join-Path $generatedDir ($className + '.java')
+
+Move-Item -LiteralPath $javaFile -Destination $destination -Force
+
+$javaFile = $destination
 
 Write-Host '[3/4] Compiling generated Java...'
 # javac получает сгенерированный файл, а классы кладёт в out/.
