@@ -1,31 +1,28 @@
-### IntelliJ IDEA ###
-out/
-Zherebtsov*.java
-!**/src/main/**/out/
-!**/src/test/**/out/
-.kotlin
+# Build and test output
+/out/
+*.class
+/bin/
 
-### Eclipse ###
-.apt_generated
+# Java files generated from Stable sources
+Zherebtsov*.java
+.stable-*.tmp
+
+# IDE and editor files
+/.idea/
+/.vscode/
+/.settings/
 .classpath
-.factorypath
 .project
-.settings
+.factorypath
+.apt_generated/
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# Operating system files
 .DS_Store
+Thumbs.db
