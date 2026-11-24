@@ -1,10 +1,10 @@
 # SkipBuild используют после test.ps1, когда транслятор уже собран.
-param([switch]$SkipBuild)
+param([switch]$SkipBuild, [string]$Suite)
 
 $ErrorActionPreference = 'Stop'
 # Находим набор примеров и классы транслятора независимо от текущего каталога.
 $project = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$suite = Join-Path $project 'examples/stable_tests'
+$suite = if ($Suite) { (Resolve-Path -LiteralPath $Suite).Path } else { Join-Path $project 'examples/stable_tests' }
 $classes = Join-Path $project 'out/classes'
 if (-not $SkipBuild) {
     # При самостоятельном запуске сначала собираем рабочий код.
@@ -106,6 +106,10 @@ foreach ($source in @(Get-ChildItem -LiteralPath (Join-Path $suite 'valid') -Fil
     $stdinText = if (Test-Path -LiteralPath $inputFile) { [IO.File]::ReadAllText($inputFile) } else { '' }
     $execution = Invoke-Tool 'java' @('-cp', $case.Directory, $case.ClassName) $stdinText
     $expectedFile = Join-Path $suite "expected/$($source.BaseName).txt"
+    if (-not (Test-Path -LiteralPath $expectedFile -PathType Leaf)) {
+        Add-Result $source.Name $false "нет файла ожидаемого вывода: $expectedFile"
+        continue
+    }
     # На Windows Java печатает CRLF, а эталоны могут храниться с LF.
     $expected = [IO.File]::ReadAllText($expectedFile).Replace("`r`n", "`n")
     $actual = $execution.Out.Replace("`r`n", "`n")
